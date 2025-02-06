@@ -1,0 +1,44 @@
+.task-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+}
+
+.task-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.task-details {
+    font-size: 1em;
+    color: #666;
+}
+
+.task-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.task-actions button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.task-actions button.complete {
+    background-color: #28a745;
+    color: white;
+}
+
+.task-actions button.delete {
+    background-color: #dc3545;
+    color: white;
+}

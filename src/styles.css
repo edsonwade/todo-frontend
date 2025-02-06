@@ -1,0 +1,27 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #222; /* You can add global styles to this file, and also import other style files */
+}
+
+p {
+  margin: 0 0 15px; /* Add some space below paragraphs with top and bottom margin and no margin on the right and left */
+}
+
+a {
+  color: #007bff;
+  text-decoration: none; /* Remove underline from links */
+}
+
+a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+
+.container {
+  max-width: 1200px; /* Set the maximum width of the container */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 20px; /* Add padding to the container */
+}

@@ -1,0 +1,73 @@
+ng
+
+
+ng add <collection>            Adds support for an external library to your project.
+  ng analytics                   Configures the gathering of Angular CLI usage metrics.
+  ng build [project]             Compiles an Angular application or library into an output directory named dist/ at the given output path.  [aliases: b]
+  ng cache                       Configure persistent disk cache and retrieve cache statistics.
+  ng completion                  Set up Angular CLI autocompletion for your terminal.
+  ng config [json-path] [value]  Retrieves or sets Angular configuration values in the angular.json file for the workspace.
+  ng deploy [project]            Invokes the deploy builder for a specified project or for the default project in the workspace.
+  ng e2e [project]               Builds and serves an Angular application, then runs end-to-end tests.  [aliases: e]
+  ng extract-i18n [project]      Extracts i18n messages from source code.
+  ng generate                    Generates and/or modifies files based on a schematic.  [aliases: g]
+  ng lint [project]              Runs linting tools on Angular application code in a given project folder.
+  ng new [name]                  Creates a new Angular workspace.  [aliases: n]
+  ng run <target>                Runs an Architect target with an optional custom builder configuration defined in your project.
+  ng serve [project]             Builds and serves your application, rebuilding on file changes.  [aliases: dev, s]
+  ng test [project]              Runs unit tests in a project.  [aliases: t]
+  ng update [packages..]         Updates your workspace and its dependencies. See https://update.angular.dev/.
+  ng version                     Outputs Angular CLI version.  [aliases: v]
+
+
+  --help     Shows a help message for this command in the console.  [boolean]
+  --version  Show Angular CLI version.  [boolean]
+
+For more information, see https://angular.dev/cli/.
+ng g interface [name] [type]
+
+Creates a new interface in your project. Interfaces define the structure of objects in TypeScript, ensuring type safety and code clarity. This schematic generates a new interface with the specified name and type.
+
+
+  name  The name for the new interface. This will be used to create the interface file (e.g., `my-interface.interface.ts`).  [string]
+  type  Adds a custom type to the filename, allowing you to create more descriptive interface names. For example, if you set the type to `data`, the filename will be `my-interface.data.ts`.  [string]
+
+
+      --help         Shows a help message for this command in the console.  [boolean]
+      --interactive  Enable interactive input prompts.  [boolean] [default: true]
+  -d, --dry-run      Run through and reports activity without writing out results.  [boolean] [default: false]
+      --defaults     Disable interactive input prompts for options with a default.  [boolean] [default: false]
+      --force        Force overwriting of existing files.  [boolean] [default: false]
+      --prefix       A prefix to be added to the interface name. This is typically not used for interfaces, as they don't have selectors like components or directives.  [string]
+      --project      The name of the project where the interface should be created. If not specified, the CLI will determine the project from the current directory.  [string]
+ng g component [name]
+
+Creates a new Angular component. Components are the basic building blocks of Angular applications. Each component consists of a TypeScript class, an HTML template, and an optional CSS stylesheet. Use this schematic to generate a new component in your project.
+
+
+  name  The name for the new component. This will be used to create the component's class, template, and stylesheet files. For example, if you provide `my-component`, the files will be named `my-component.component.ts`, `my-component.component.html`, and `my-component.component.css`.  [string]
+
+
+      --help                Shows a help message for this command in the console.  [boolean]
+      --interactive         Enable interactive input prompts.  [boolean] [default: true]
+  -d, --dry-run             Run through and reports activity without writing out results.  [boolean] [default: false]
+      --defaults            Disable interactive input prompts for options with a default.  [boolean] [default: false]
+      --force               Force overwriting of existing files.  [boolean] [default: false]
+  -c, --change-detection    Configures the change detection strategy for the component.  [string] [choices: "Default", "OnPush"] [default: "Default"]
+  -b, --display-block       Adds `:host { display: block; }` to the component's stylesheet, ensuring the component renders as a block-level element. This is useful for layout purposes.  [boolean] [default: false]
+      --export              Automatically export the component from the specified NgModule, making it accessible to other modules in the application.  [boolean] [default: false]
+      --export-default      Use a default export for the component in its TypeScript file instead of a named export.  [boolean] [default: false]
+      --flat                Create the component files directly in the project's `src/app` directory instead of creating a new folder for them.  [boolean] [default: false]
+  -s, --inline-style        Include the component's styles directly in the `component.ts` file. By default, a separate stylesheet file (e.g., `my-component.component.css`) is created.  [boolean] [default: false]
+  -t, --inline-template     Include the component's HTML template directly in the `component.ts` file. By default, a separate template file (e.g., `my-component.component.html`) is created.  [boolean] [default: false]
+  -m, --module              Specify the NgModule where the component should be declared. If not provided, the CLI will attempt to find the closest NgModule in the component's path.  [string]
+  -p, --prefix              A prefix to be added to the component's selector. For example, if the prefix is `app` and the component name is `my-component`, the selector will be `app-my-component`.  [string]
+      --project             The name of the project where the component should be added. If not specified, the CLI will determine the project from the current directory.  [string]
+      --selector            The HTML selector to use for this component. If not provided, a selector will be generated based on the component name (e.g., `app-my-component`).  [string]
+      --skip-import         Do not automatically import the new component into its closest NgModule.  [boolean] [default: false]
+      --skip-selector       Skip the generation of an HTML selector for the component.  [boolean] [default: false]
+      --skip-tests          Skip the generation of unit test files `spec.ts`.  [boolean] [default: false]
+      --standalone          Generate a standalone component. Standalone components are self-contained and don't need to be declared in an NgModule. They can be used independently or imported directly into other standalone components.  [boolean] [default: true]
+      --style               Specify the type of stylesheet to be created for the component, or `none` to skip creating a stylesheet.  [string] [choices: "css", "scss", "sass", "less", "none"] [default: "css"]
+      --type                Append a custom type to the component's filename. For example, if you set the type to `container`, the file will be named `my-component.container.ts`.  [string] [default: "Component"]
+  -v, --view-encapsulation  Sets the view encapsulation mode for the component. This determines how the component's styles are scoped and applied.  [string] [choices: "Emulated", "None", "ShadowDom"]
