@@ -18,7 +18,7 @@ export class TaskListComponent {
   constructor() {
     // Get all tasks from the TaskService. This is a mock service that returns a promise.
     this.taskService.getTasks()
-    .then(tasks => this.tasks = tasks);
+      .then(tasks => this.tasks = tasks);
 
   }
 
@@ -63,18 +63,24 @@ export class TaskListComponent {
   //   }
   // ];
 
-   // Function to handle task deletion was here before the TaskService was implemented to handle task deletion,and update the task list accordingly
+  // Function to handle task deletion was here before the TaskService was implemented to handle task deletion,and update the task list accordingly
 
-   handleCheckbox(id: string) {
+  handleCheckbox(id: string) {
     const taskIndex = this.tasks.findIndex(task => task.id === id);
     const updatedTask = this.tasks[taskIndex];
     updatedTask.completed = !updatedTask.completed;
     this.taskService.updateTask(updatedTask)
-    .then(updatedTask => {
-      this.tasks[taskIndex] = updatedTask;
-    });
-   }
+      .then(updatedTask => {
+        this.tasks[taskIndex] = updatedTask;
+      });
+  }
 
+  deleteTask(id: string) {
+    this.taskService.deleteTask(id)
+      .then(() => {
+        this.tasks = this.tasks.filter(task => task.id !== id);
+      });
+  }
 
 
   // // Function to handle checkbox change event and update task status accordingly

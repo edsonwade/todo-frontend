@@ -15,7 +15,7 @@
             </tr>
         </thead>
         <tbody>
-            
+
             <!-- THIS IS THE TASK LIST AND THE TASK IS BEING LOOPED THROUGH AND THE TASK IS BEING CHECKED 
              IF IT IS COMPLETED OR NOT AND THE STATUS IS BEING CHECKED IF IT IS IN PROGRESS OR NOT 
              THE TASK IS BEING CHECKED IF IT IS IN PROGRESS OR NOT AND THE TASK IS BEING CHECKED IF IT IS COMPLETED OR NOT.
@@ -25,19 +25,21 @@
             <tr>
                 <td>
                     <label class="{{ task.completed ? 'completed-task' : '' }}">
-						<input type="checkbox" aria-label="Select task" [checked]="task.completed"
-							(click)="handleCheckbox(task.id!)" />{{ task.name }}
-					</label>
+                        <input type="checkbox" aria-label="Select task" [checked]="task.completed"
+                            (click)="handleCheckbox(task.id!)" />{{ task.name }}
+                    </label>
                 </td>
                 <td>
-                    <span class="status-dot {{task.completed ? 'completed' : 'in-progress'}}"></span>{{task.completed ? 'Completed' : 'In Progress'}}
+                    <span class="status-dot {{task.completed ? 'completed' : 'in-progress'}}"></span>{{task.completed ?
+                    'Completed' : 'In Progress'}}
 
                 </td>
                 <td>
                     {{task.createdAt | date:'yyyy-MM-dd'}}
                 </td>
+                <td (click)="deleteTask(task.id)">X</td>
             </tr>
-        }
+            }
         </tbody>
     </table>
     <div class="button-container">
