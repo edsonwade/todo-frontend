@@ -2,16 +2,18 @@ import { Component, inject } from '@angular/core';
 import { Task } from '../../task.model';
 import { DatePipe } from '@angular/common';
 import { TaskService } from '../../task.service';
+import { TaskFormComponent } from '../task-form/task-form.component';
 
 @Component({
   selector: 'app-task-list',
   standalone: true,
-  imports: [DatePipe],
+  imports: [DatePipe, TaskFormComponent],
   templateUrl: './task-list.component.html',
   styleUrl: './task-list.component.css'
 })
 export class TaskListComponent {
   tasks: Task[] = [];
+  showModal = false; // Flag to show/hide the modal dialog box for task creation form.
 
   private taskService = inject(TaskService);
 
