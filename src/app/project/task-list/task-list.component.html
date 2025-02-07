@@ -37,7 +37,8 @@
                 <td>
                     {{task.createdAt | date:'yyyy-MM-dd'}}
                 </td>
-                <td (click)="deleteTask(task.id)">X</td>
+                <td (click)="updateTask(task)">✏️</td>
+                <td (click)="deleteTask(task.id)">❌</td>
             </tr>
             }
         </tbody>
@@ -48,6 +49,7 @@
     </div>
     <!-- THIS IS THE TASK FORM AND THE TASK FORM IS BEING SHOWN WHEN THE SHOW MODAL IS TRUE -->
     @if(showModal){
-        <app-task-form (closePanel)="showModal = false"></app-task-form> 
+        <app-task-form (closePanel)="showModal = false" [currentTask]="selectedTask"
+		[formType]="formType"></app-task-form>
     }
 </div>
